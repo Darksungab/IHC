@@ -6,18 +6,16 @@ module.exports = {
     },
     cadastrarCliente(req, res){
         const dadosFormulario = req.body;
-        const novoCliente = clientesModel.cadastrar(dadosFormulario);
+        clientesModel.cadastrar(dadosFormulario);
         res.redirect("/login");
     },
     autenticar(req, res){
         const email = req.body.email;
         const senha = req.body.senha;
         const autenticado = clientesModel.autenticar(email, senha);
-        res.render("login", {autenticado});
-
+        res.render("login", { autenticado, tentouLogin: true });
     },
     exibirLogin(req, res){
-        res.render("login")
-        
+        res.render("login");
     }
 }

@@ -1,22 +1,31 @@
-{{#if autenticado}}
-    <p>Bem-vindo, {{autenticado.nome}}!</p>
-    <a href="/">Prosseguir</a>
+<div class="login-wrap">
+    <div class="card">
+        {{#if autenticado}}
+            <h1 class="mensagem-boas-vindas">Bem-vindo, {{autenticado.nome}}!</h1>
+            <a href="/" class="btn-primario" style="display:inline-block; text-decoration:none; text-align:center;">Prosseguir</a>
+        {{else}}
+            <h1>Login</h1>
+            <p class="subtitulo">Entre com seu e-mail e senha</p>
 
-{{else}}
-<div class="form-secao">
-    <form method="post" action="/login">
-        <div class="campo">
-        <label for="Email">E-mail:</label>
-        <input type="email" id="Email" name="email" placeholder="exemplo@email.com">
-        </div>
+            {{#if tentouLogin}}
+                <p class="mensagem-erro">E-mail ou senha incorretos. Tente novamente.</p>
+            {{/if}}
 
-        <div class="campo">
-        <label for="Senha">Senha:</label>
-        <input type="password" id="Senha" name="senha" placeholder="Informe sua senha">
-        </div>
-        <button type="submit">Enviar</button>
-    </form>
+            <form method="post" action="/login">
+                <div class="campo">
+                    <label for="Email">E-mail:</label>
+                    <input type="email" id="Email" name="email" placeholder="exemplo@email.com" required>
+                </div>
 
-    <a href="/cadastrar" class="botao-cadastro">Não possuo cadastro</a>
-</div>          
-{{/if}}
+                <div class="campo">
+                    <label for="Senha">Senha:</label>
+                    <input type="password" id="Senha" name="senha" placeholder="Informe sua senha" required>
+                </div>
+
+                <button type="submit" class="btn-primario">Entrar</button>
+            </form>
+
+            <a href="/cadastrar" class="link-secundario">Não possuo cadastro — criar conta</a>
+        {{/if}}
+    </div>
+</div>

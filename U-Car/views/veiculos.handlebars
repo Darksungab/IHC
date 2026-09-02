@@ -1,21 +1,19 @@
 <h1 class="titulo-pg">Veículos</h1>
 
-<div>
-    <ul>
-        {{#each veiculos}}
-        <li>
-            <article>
-                <h2>{{nome}} {{ano}}</h2>
-                <dl>                
-                    <dt>Combustível:</dt>
-                    <dd>{{combustivel}}</dd>
-                    <dt>Valor:</dt>
-                    <dd>{{diaria}}</dd>
-                </dl>
-                <a href="/veiculos/{{id}}">Ver carro</a>
-                <br><br>              
-            </article>
-        </li>
-        {{/each}}
-    </ul>
-</div>
+<ul class="lista-veiculos">
+    {{#each veiculos}}
+    <li>
+        <article class="veiculo-card">
+            <img src="{{foto}}" alt="{{nome}}" class="veiculo-card-foto">
+            <h2>{{nome}} {{ano}}</h2>
+            <dl>
+                <dt>Combustível:</dt>
+                <dd>{{combustivel}}</dd>
+                <dt>Diária:</dt>
+                <dd>R$ {{diaria}}</dd>
+            </dl>
+            <a href="/veiculos/{{id}}">Ver carro</a>
+        </article>
+    </li>
+    {{/each}}
+</ul>

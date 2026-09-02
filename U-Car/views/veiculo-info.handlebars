@@ -1,10 +1,10 @@
 <a href="/veiculos" class="btn-voltar">
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" aria-hidden="true" fill="currentColor"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path></svg>
-<span>Voltar</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" aria-hidden="true" fill="currentColor"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path></svg>
+    <span>Voltar</span>
 </a>
 
 <div class="div-info">
-    <img src="" alt="">
+    <img src="{{veiculoInfo.foto}}" alt="{{veiculoInfo.nome}}">
     <article>
         {{#with veiculoInfo}}
         <h2>{{nome}} {{ano}}</h2>
@@ -13,9 +13,9 @@
             <dd>{{lugares}}</dd>
             <dt>Combustível:</dt>
             <dd>{{combustivel}}</dd>
-            <dt>Ar-Condicionado:</dt>
+            <dt>Ar-condicionado:</dt>
             <dd>{{ar_condicionado}}</dd>
-            <dt>Cambio:</dt>
+            <dt>Câmbio:</dt>
             <dd>{{cambio}}</dd>
             <dt>Direção:</dt>
             <dd>{{direcao}}</dd>
@@ -23,11 +23,10 @@
             <dd>{{portas}}</dd>
             <dt>Bagageiro:</dt>
             <dd>{{bagageiro}}</dd>
-            <dt>Diaria:</dt>
-            <dd>{{diaria}}</dd>
-            <dt>Confira a disponibilidade aqui!</dt>
-            <dd><a href="/veiculos/{{id}}/disponibilidade">Ver</a></dd>
-        </dl>      
+            <dt>Diária:</dt>
+            <dd>R$ {{diaria}}</dd>
+        </dl>
+        <a href="/veiculos/{{id}}/disponibilidade" class="btn-disponibilidade">Ver disponibilidade e valores</a>
         {{/with}}
     </article>
 </div>

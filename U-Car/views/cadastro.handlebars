@@ -1,0 +1,104 @@
+<h2>Cadastre</h2>
+
+<a href="/login" >
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" aria-hidden="true" fill="currentColor"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z" class="bnt-voltar-svg"></path></svg>
+<span>Voltar</span>
+</a>
+<div id="Div-base">
+    <form method="post" action="/cadastrar">
+        <div class="form-secao">
+            <h2>Dados pessoais</h2>
+            <div class="campo">
+            <label for="Nome">Nome:</label>
+            <input type="text" id="Nome" name="nome" placeholder="Digite seu nome completo" pattern="^[A-Za-zÀ-ÿ\s'-]+$">
+            </div>
+
+            <div class="campo">
+            <label for="Tel">Telefone:</label>
+            <input type="text" id="Tel" name="telefone" placeholder="(11) 99999-9999" pattern="^\(?\d{2}\)?[\s-]?9?\d{4}[\s-]?\d{4}$">
+            </div>
+
+            <div class="campo">
+            <label for="Nascimento">Data de nascimento:</label>
+            <input type="date" id="Nascimento" name="nascimento">
+            </div>
+
+            <div class="campo">
+            <label for="Email">E-mail:</label>
+            <input type="email" id="Email" name="email" placeholder="exemplo@email.com">
+            </div>
+
+            <div class="campo">
+            <label for="Senha">Senha:</label>
+            <input type="password" id="Senha" name="senha" placeholder="Crie sua senha">
+            </div>
+
+            <div class="campo">
+            <label for="CPF">CPF:</label>
+            <input type="text" id="CPF" name="cpf" placeholder="000.000.000.-00" pattern="^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$">            
+            </div>
+            
+
+        </div>
+        <div class="form-secao">
+            <h2>Endereço</h2>
+            <div class="campo">
+            <label for="Endereco">Endereço:</label>
+            <input type="text" id="Endereco" name="endereco" placeholder="Rua, numero, complemento">
+            </div>
+
+            <div class="campo">
+            <label for="Cidade">Cidade:</label>
+            <input type="text" id="Cidade" name="cidade" placeholder="Digite sua cidade" pattern="^[A-Za-zÀ-ÿ\s'-]+$">    
+            </div>
+
+            <div class="campo">
+            <label for="Pais">País:</label>
+            <select id="Pais" name="pais">
+                <option value="BR" selected>Brasil</option>
+            </select>
+            </div>
+
+            <div class="campo">
+            <label for="Estado">Estado:</label>
+            <select id="Estado" name="estado">
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP" selected>São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+            </select>
+            </div>
+
+            <div class="campo">
+            <label for="CEP">CEP:</label>
+            <input type="text" id="CEP" name="cep" placeholder="00000-000" pattern="^\d{5}-?\d{3}$">           
+            </div>
+
+        </div>
+        <button type="submit" id="Submit">Enviar</button>
+        
+    </form>            
+</div>

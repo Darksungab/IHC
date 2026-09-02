@@ -1,0 +1,127 @@
+:root {
+    --cor-primaria: #6D3FE0;
+    --cor-fundo-sidebar: #2f2262;
+    --cor-texto: #1F1B2E;
+    --cor-fundo-pagina: #F5F3FB;
+    --cor-fundo-div: #ffffff;
+    --nav-icon: 32px;
+    --sucesso: #4ab150;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--cor-fundo-pagina);
+    display: flex;
+    min-height: 100vh;
+}
+nav{
+    width: 260px;
+    height: auto;
+    background-color: var(--cor-fundo-sidebar);
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+}
+main {
+    flex: 1;
+}
+main div{
+    background-color: var(--cor-fundo-div);
+    padding: 0px;
+    margin: 25px;
+    border: 5px solid;
+    border-radius: 15px;
+    border-color: var(--cor-fundo-div);
+}
+main div dl{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 5px;
+    row-gap: 6px;
+    align-items:baseline;   
+}
+nav svg{
+    width: var(--nav-icon);
+    height: var(--nav-icon);
+}
+nav span{
+    text-align: center;
+}
+.btn-side-nav{
+    border: 1px solid;
+    border-color: var(--cor-fundo-sidebar);
+    border-radius: 15px;
+    color: #ffffff;
+    margin: 14px;
+    padding:15px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(109, 63, 224, 0.15);
+}
+.btn-side-nav:hover{
+    box-shadow: 0px 3px 2px var(--cor-texto);
+}
+.btn-side-nav[href="/sair"] {
+    margin-top: auto;
+}
+
+.titulo-pg{
+    margin-top: 25px;
+    margin-left: 25px;
+}
+#Email, #Senha,#Nome, #Tel, #Nascimento, #CPF, #CEP, #Endereco, #Cidade, #Pais, #Estado{
+    padding: auto;
+    border: 1px solid;
+    border-color: var(--cor-texto);
+    border-radius: 3px;
+    margin: 7px;
+}
+#Submit{
+    display: flex;
+    
+}
+#Div-base{
+    display: flex;
+    min-height: 85vh
+}
+.bnt-voltar-svg{
+    width: 50px;
+    height: 20px;
+}
+.logo {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.logo-titulo {
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.logo-subtitulo {
+    color: var(--cor-fundo-pagina);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+.form-secao {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 18px;
+}
+.form-secao h2 {
+    grid-column: 1 / -1;
+}
+.div-login{
+    
+}

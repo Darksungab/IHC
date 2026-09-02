@@ -1,0 +1,21 @@
+<h1 class="titulo-pg">Veículos</h1>
+
+<div>
+    <ul>
+        {{#each veiculos}}
+        <li>
+            <article>
+                <h2>{{nome}} {{ano}}</h2>
+                <dl>                
+                    <dt>Combustível:</dt>
+                    <dd>{{combustivel}}</dd>
+                    <dt>Valor:</dt>
+                    <dd>{{diaria}}</dd>
+                </dl>
+                <a href="/veiculos/{{id}}">Ver carro</a>
+                <br><br>              
+            </article>
+        </li>
+        {{/each}}
+    </ul>
+</div>

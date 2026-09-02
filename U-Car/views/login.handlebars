@@ -1,0 +1,22 @@
+{{#if autenticado}}
+    <p>Bem-vindo, {{autenticado.nome}}!</p>
+    <a href="/">Prosseguir</a>
+
+{{else}}
+<div class="form-secao">
+    <form method="post" action="/login">
+        <div class="campo">
+        <label for="Email">E-mail:</label>
+        <input type="email" id="Email" name="email" placeholder="exemplo@email.com">
+        </div>
+
+        <div class="campo">
+        <label for="Senha">Senha:</label>
+        <input type="password" id="Senha" name="senha" placeholder="Informe sua senha">
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <a href="/cadastrar" class="botao-cadastro">Não possuo cadastro</a>
+</div>          
+{{/if}}

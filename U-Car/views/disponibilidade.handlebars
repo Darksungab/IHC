@@ -1,0 +1,32 @@
+<h2>disponibilidade</h2>
+
+<a href="/veiculos/{{veiculo.id}}" class="btn-voltar">
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" aria-hidden="true" fill="currentColor"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path></svg>
+<span>Voltar</span>
+</a>
+
+<div> 
+    <form method="post" action="/veiculos/{{veiculo.id}}/disponibilidade">        
+            <label for="retirada">Retirada</label>
+            <input type="date" id="retirada" name="retirada">
+
+            <label for="devolucao">Devolucao</label>
+            <input type="date" id="devolucao" name="devolucao">
+
+            <button type="submit">Enviar</button>        
+    </form>
+{{#if dias}}
+    <dl>
+    <dt>Carro:</dt>
+    <dd>{{veiculo.nome}}</dd>
+    <dt>Dias:</dt>
+    <dd>{{dias}}</dd>
+    <dt>Subtotal:</dt>
+    <dd>{{subtotal}}</dd>
+    <dt>Taxa de serviço:</dt>
+    <dd>{{taxaServico}}</dd>
+    <dt>Total:</dt>
+    <dd>{{total}}</dd>
+    </dl>
+{{/if}}
+</div>

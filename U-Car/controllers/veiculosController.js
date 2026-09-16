@@ -37,6 +37,7 @@ module.exports = {
     exibirDisponibilidade (req,res){
     const id = req.params.id;
     const veiculo = veiculosModel.buscarPorId(id);
+    const hoje = new Date();
     const hojeFormatado = hoje.toISOString().split('T')[0];
     res.render("disponibilidade", {veiculo, hojeFormatado});
     }

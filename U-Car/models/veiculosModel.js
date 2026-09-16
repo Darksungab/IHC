@@ -24,6 +24,16 @@ module.exports = {
         const subtotal = dias * diaria;
         const taxaServico = (diaria / 100) * 20;
         const total = subtotal + taxaServico;
+        let dataInvalidas;
+        const mensagemErro = "A data de devolução deve ser depois da retirada";
+        
+        if (dias <= 0){
+            dataInvalidas = true;
+            return {mensagemErro, dataInvalidas};
+        }
+        else{
+            dataInvalidas = false;
+        };
 
         return {dias, subtotal, taxaServico, total};
     }

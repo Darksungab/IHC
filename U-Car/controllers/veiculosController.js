@@ -17,18 +17,28 @@ module.exports = {
 
         const retirada = new Date(req.body.retirada);
         const devolucao = new Date(req.body.devolucao);
+        const hoje = new Date();
+        const hojeFormatado = hoje.toISOString().split('T')[0];
 
         const resultado = veiculosModel.calcularValor(veiculo.diaria, retirada, devolucao);
+        if (resultado.dataInvalidas == true){
+            res.render ("disponibilidade",{veiculo, erro: resultado.mensagemErro,hojeFormatado} )
+            return;
+        }
+        else{
+            res.render("disponibilidade", {veiculo, hojeFormatado, ...resultado});
 
+        }
         
 
-        res.render("disponibilidade", {veiculo, ...resultado});
+        
         
     },
     exibirDisponibilidade (req,res){
     const id = req.params.id;
     const veiculo = veiculosModel.buscarPorId(id);
-    res.render("disponibilidade", {veiculo});
+    const hojeFormatado = hoje.toISOString().split('T')[0];
+    res.render("disponibilidade", {veiculo, hojeFormatado});
     }
 }
 

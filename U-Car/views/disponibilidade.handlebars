@@ -10,16 +10,19 @@
     <form method="post" action="/veiculos/{{veiculo.id}}/disponibilidade" class="disponibilidade-form">
         <div class="campo">
             <label for="retirada">Retirada:</label>
-            <input type="date" id="retirada" name="retirada" required>
+            <input type="date" id="retirada" name="retirada" min="{{hojeFormatado}}" required>
         </div>
 
         <div class="campo">
             <label for="devolucao">Devolução:</label>
-            <input type="date" id="devolucao" name="devolucao" required>
+            <input type="date" id="devolucao" name="devolucao" min="{{hojeFormatado}}" required>
         </div>
 
         <button type="submit" class="btn-primario">Verificar</button>
     </form>
+    {{#if erro}}
+    <p class="mensagem-erro">{{erro}}</p>
+    {{/if}}
 
     {{#if dias}}
     <dl class="resultado">

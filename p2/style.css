@@ -1,0 +1,162 @@
+:root {
+    --marrom: #4b3832;
+    --destaque: #854442;
+    --principal: #be9b7b;
+    --secundaria: #3c2f2f;
+    --fundo: #ffeaf1;
+    --borda: 5px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--marrom);
+    background: var(--fundo);
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+
+header {
+    background: #ffffff;
+    border-bottom: 2px solid var(--principal);
+}
+
+.top {
+    max-width: 1120px;
+    margin: auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.brand {
+    color: var(--destaque);
+    font-size: 1.45rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 20px;
+}
+
+nav a {
+    color: var(--marrom);
+    font: 600 .96rem Arial, sans-serif;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--destaque);
+}
+
+.nav-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.nav-icon:hover{
+    cursor: pointer;
+    border: var(--destaque);
+}
+
+
+main {
+    max-width: 1120px;
+    margin: auto;
+    padding: 64px 24px;
+}
+
+.intro {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 38px;
+}
+
+h2 {
+    color: var(--secundaria);
+    font-size: 2rem;
+    margin: 0 0 12px;
+}
+
+.intro p,
+.card p {
+    color: var(--marrom);
+    line-height: 1.6;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid var(--principal);
+    border-radius: var(--borda);
+    padding: 25px;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(60, 47, 47, .12);
+}
+
+.icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: var(--borda);
+    background: var(--fundo);
+    color: var(--destaque);
+    transition: background .2s, color .2s;
+}
+
+.icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+.card:hover .icon {
+    background: var(--destaque);
+    color: #ffffff;
+}
+
+.card h3 {
+    color: var(--secundaria);
+    margin: 14px 0 8px;
+    font-size: 1.35rem;
+}
+
+.card p {
+    margin: 0;
+}
+
+
+@media (max-width: 760px) {
+    .top {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
